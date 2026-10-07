@@ -1,0 +1,156 @@
+/* STREAMING_CHUNK:Defining core CSS variables and body styles... */
+:root {
+--bg-dark: #050b14;
+--card-bg: rgba(10, 18, 36, 0.88);
+--card-border: rgba(56, 189, 248, 0.3);
+--primary-cyan: #38bdf8;
+--primary-teal: #14b8a6;
+--accent-blue: #3b82f6;
+}
+
+body {
+font-family: 'Plus Jakarta Sans', sans-serif;
+background-color: var(--bg-dark);
+color: #f8fafc;
+overflow-x: hidden;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+/* STREAMING_CHUNK:Configuring background animations and glassmorphism... */
+.animated-bg {
+background: radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+radial-gradient(circle at 85% 80%, rgba(20, 184, 166, 0.12) 0%, transparent 45%),
+radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.95) 0%, transparent 80%);
+background-size: 200% 200%;
+animation: pulseBg 12s ease infinite alternate;
+}
+
+@keyframes pulseBg {
+0% { background-position: 0% 0%; }
+100% { background-position: 100% 100%; }
+}
+
+.glass-card {
+background: rgba(10, 18, 36, 0.88);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border: 1px solid var(--card-border);
+box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7),
+0 0 20px -5px rgba(56, 189, 248, 0.18);
+}
+
+.glass-nav {
+background: rgba(5, 11, 20, 0.92);
+backdrop-filter: blur(24px);
+-webkit-backdrop-filter: blur(24px);
+border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+/* STREAMING_CHUNK:Styling text contrast and legibility enhancements... /
+/ Mejoras de contraste y legibilidad global */
+p, span, h1, h2, h3, h4, h5, h6, label, a, li {
+text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+}
+
+.text-slate-400 {
+color: #94a3b8 !important;
+}
+
+.text-slate-300 {
+color: #cbd5e1 !important;
+}
+
+.text-slate-200 {
+color: #e2e8f0 !important;
+}
+
+/* Estilos de legibilidad para formularios e insumos */
+input::placeholder, textarea::placeholder {
+color: #94a3b8 !important;
+opacity: 1;
+}
+
+input, select, textarea {
+background-color: rgba(6, 13, 27, 0.95) !important;
+color: #ffffff !important;
+border-color: rgba(56, 189, 248, 0.35) !important;
+}
+
+input:focus, select:focus, textarea:focus {
+background-color: rgba(10, 20, 40, 0.98) !important;
+border-color: var(--primary-cyan) !important;
+box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+}
+
+/* STREAMING_CHUNK:Styling interactive glows and buttons... */
+.glow-effect {
+position: relative;
+transition: all 0.3s ease;
+}
+
+.glow-effect:hover {
+box-shadow: 0 0 25px rgba(56, 189, 248, 0.45);
+border-color: rgba(56, 189, 248, 0.7);
+transform: translateY(-3px);
+}
+
+.glow-text {
+text-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+}
+
+.pulse-dot {
+animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+0% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.7); }
+70% { box-shadow: 0 0 0 10px rgba(20, 184, 166, 0); }
+100% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0); }
+}
+
+.shimmer-button {
+background: linear-gradient(135deg, #0284c7 0%, #0d9488 100%);
+position: relative;
+overflow: hidden;
+transition: all 0.3s ease;
+}
+
+.shimmer-button::after {
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: linear-gradient(
+60deg,
+transparent 30%,
+rgba(255, 255, 255, 0.25) 50%,
+transparent 70%
+);
+transform: rotate(30deg) translateY(-100%);
+transition: transform 0.8s ease;
+}
+
+.shimmer-button:hover::after {
+transform: rotate(30deg) translateY(100%);
+}
+
+/* STREAMING_CHUNK:Styling scrollbars... */
+.custom-scrollbar::-webkit-scrollbar {
+width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+background: rgba(15, 23, 42, 0.8);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+background: rgba(56, 189, 248, 0.4);
+border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+background: rgba(56, 189, 248, 0.7);
+}

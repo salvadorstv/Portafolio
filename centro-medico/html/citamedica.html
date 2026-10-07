@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro Médico San Rafael Salud - Agendar Cita Médica</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="animated-bg min-h-screen flex flex-col custom-scrollbar">
+
+  <header class="glass-nav sticky top-0 z-50 w-full transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="../index.html" class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-teal-400 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+            <svg class="w-6 h-6 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"></path>
+            </svg>
+          </div>
+          <div>
+            <span class="text-xl font-extrabold tracking-tight text-white">San Rafael <span class="text-cyan-400 glow-text">Salud</span></span>
+            <span class="block text-[10px] tracking-widest text-teal-300 font-semibold uppercase">Centro Hospitalario</span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex space-x-2 bg-slate-900/60 p-1.5 rounded-2xl border border-slate-800">
+          <a href="../index.html" class="px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-800/50">Inicio</a>
+          <a href="nosotros.html" class="px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-800/50">Nosotros</a>
+          <a href="ubicacion.html" class="px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-800/50">Ubicación</a>
+          <a href="citamedica.html" class="px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 text-cyan-400 bg-cyan-950/50 border border-cyan-500/30">Cita Médica</a>
+        </nav>
+
+        <div class="hidden md:flex items-center space-x-4">
+          <div class="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-teal-950/40 border border-teal-500/30">
+            <span class="w-2.5 h-2.5 rounded-full bg-teal-400 pulse-dot"></span>
+            <span class="text-xs font-semibold text-teal-300">Urgencias 24/7</span>
+          </div>
+          <a href="citamedica.html" class="shimmer-button px-5 py-2.5 rounded-xl font-semibold text-sm text-white shadow-lg shadow-cyan-500/20 active:scale-95">
+            Agendar Ahora
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden text-slate-300 p-2 rounded-lg hover:bg-slate-800 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden glass-card border-x-0 border-t-0 px-4 pt-2 pb-6 space-y-2">
+      <a href="../index.html" class="block w-full text-left px-4 py-3 rounded-xl text-base font-semibold text-slate-300 hover:bg-slate-800/50">Inicio</a>
+      <a href="nosotros.html" class="block w-full text-left px-4 py-3 rounded-xl text-base font-semibold text-slate-300 hover:bg-slate-800/50">Nosotros</a>
+      <a href="ubicacion.html" class="block w-full text-left px-4 py-3 rounded-xl text-base font-semibold text-slate-300 hover:bg-slate-800/50">Ubicación</a>
+      <a href="citamedica.html" class="block w-full text-left px-4 py-3 rounded-xl text-base font-semibold text-cyan-400 bg-cyan-950/30">Cita Médica</a>
+      <div class="pt-4 border-t border-slate-800 flex justify-between items-center">
+        <span class="text-xs text-teal-400 font-semibold flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-teal-400 pulse-dot"></span> Urgencias 24/7
+        </span>
+        <a href="citamedica.html" class="shimmer-button px-4 py-2 rounded-lg text-sm font-semibold text-white">Agendar Cita</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <div class="text-center max-w-3xl mx-auto space-y-4 pt-4">
+      <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-cyan-950/60 text-cyan-400 border border-cyan-500/30 uppercase tracking-widest">Reserva en Línea</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white">Agendar Cita Médica</h1>
+      <p class="text-slate-300 text-base leading-relaxed">
+        Selecciona la especialidad, el profesional de preferencia y el horario ideal. Recibirás confirmación inmediata.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-8">
+        <div class="glass-card rounded-3xl p-6 sm:p-10 space-y-6">
+          <form id="appointment-form" onsubmit="handleAppointmentSubmit(event)" class="space-y-6">
+            
+            <div class="space-y-4">
+              <h3 class="text-sm font-bold text-cyan-400 uppercase tracking-wider">1. Datos Personales del Paciente</h3>
+              
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label for="form-name" class="text-xs font-bold text-slate-300">Nombre Completo *</label>
+                  <input type="text" id="form-name" required placeholder="Ej. Ana María García" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all" oninput="refreshSummary()">
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="form-phone" class="text-xs font-bold text-slate-300">Teléfono Móvil *</label>
+                  <input type="tel" id="form-phone" required placeholder="+52 55 1234 5678" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all">
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="form-email" class="text-xs font-bold text-slate-300">Correo Electrónico *</label>
+                <input type="email" id="form-email" required placeholder="ana.garcia@ejemplo.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all">
+              </div>
+            </div>
+
+            <div class="space-y-4 pt-4 border-t border-slate-800">
+              <h3 class="text-sm font-bold text-teal-400 uppercase tracking-wider">2. Detalle de la Consulta</h3>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label for="form-spec" class="text-xs font-bold text-slate-300">Especialidad Médica *</label>
+                  <select id="form-spec" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400 transition-all" onchange="refreshSummary()">
+                    <option value="" disabled selected>Seleccionar Especialidad</option>
+                    <option value="Cardiología">Cardiología</option>
+                    <option value="Neurología">Neurología</option>
+                    <option value="Pediatría">Pediatría</option>
+                    <option value="Traumatología">Traumatología</option>
+                    <option value="Oncología">Oncología</option>
+                    <option value="Oftalmología">Oftalmología</option>
+                  </select>
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="form-mode" class="text-xs font-bold text-slate-300">Modalidad *</label>
+                  <select id="form-mode" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400 transition-all" onchange="refreshSummary()">
+                    <option value="Presencial Sede Central">Presencial (Sede Central)</option>
+                    <option value="Telemedicina VideoConsulta">Telemedicina (VideoConsulta Online)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label for="form-date" class="text-xs font-bold text-slate-300">Fecha Deseada *</label>
+                  <input type="date" id="form-date" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400 transition-all" onchange="refreshSummary()">
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="form-time" class="text-xs font-bold text-slate-300">Horario *</label>
+                  <select id="form-time" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400 transition-all" onchange="refreshSummary()">
+                    <option value="" disabled selected>Seleccionar Horario</option>
+                    <option value="09:00 AM">09:00 AM</option>
+                    <option value="11:30 AM">11:30 AM</option>
+                    <option value="03:00 PM">03:00 PM</option>
+                    <option value="05:30 PM">05:30 PM</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="shimmer-button w-full py-4 rounded-xl font-extrabold text-white text-base shadow-lg shadow-cyan-500/25 active:scale-95 transition-all">
+              Confirmar y Agendar Turno
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4">
+        <div class="glass-card rounded-3xl p-6 space-y-6 sticky top-28">
+          <h3 class="font-bold text-white text-base border-b border-slate-800 pb-3 flex items-center justify-between">
+            <span>Resumen de Cita</span>
+            <span class="w-2 h-2 rounded-full bg-cyan-400 pulse-dot"></span>
+          </h3>
+
+          <div class="space-y-4 text-xs">
+            <div>
+              <span class="text-slate-400 block">Paciente:</span>
+              <span id="summary-name" class="font-bold text-white text-sm">--</span>
+            </div>
+
+            <div>
+              <span class="text-slate-400 block">Especialidad:</span>
+              <span id="summary-spec" class="font-bold text-cyan-400 text-sm">No seleccionada</span>
+            </div>
+
+            <div>
+              <span class="text-slate-400 block">Modalidad:</span>
+              <span id="summary-mode" class="font-semibold text-slate-200">Presencial Sede Central</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-800">
+              <div>
+                <span class="text-slate-400 block">Fecha:</span>
+                <span id="summary-date" class="font-bold text-white">--/--/----</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block">Hora:</span>
+                <span id="summary-time" class="font-bold text-teal-400">--:--</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+            <span class="text-[10px] font-bold text-teal-400 uppercase tracking-widest">Garantía San Rafael</span>
+            <p class="text-[11px] text-slate-400">Confirmación instantánea enviada por correo y recordatorio por SMS 24 horas antes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div id="modal-success" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden">
+    <div class="glass-card max-w-md w-full rounded-3xl p-8 text-center space-y-6 border-cyan-500/50 shadow-2xl">
+      <div class="w-16 h-16 rounded-2xl bg-teal-500/20 border border-teal-500/40 text-teal-400 flex items-center justify-center mx-auto text-3xl">
+        ✓
+      </div>
+      
+      <div class="space-y-2">
+        <h3 class="text-2xl font-extrabold text-white">¡Cita Confirmada!</h3>
+        <p class="text-xs text-slate-300">Hemos registrado exitosamente tu solicitud. Te enviamos los detalles de acceso al correo proporcionado.</p>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-left text-xs space-y-2">
+        <div class="flex justify-between">
+          <span class="text-slate-400">Código Reserva:</span>
+          <span class="font-mono text-cyan-400 font-bold">SR-89210</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Estado:</span>
+          <span class="text-teal-400 font-bold">Confirmado</span>
+        </div>
+      </div>
+
+      <button onclick="closeConfirmationModal()" class="shimmer-button w-full py-3 rounded-xl font-bold text-white text-sm">
+        Aceptar y Volver al Inicio
+      </button>
+    </div>
+  </div>
+
+  <footer class="glass-nav border-t border-slate-800 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center space-x-2">
+        <div class="w-6 h-6 rounded-lg bg-cyan-500 flex items-center justify-center text-slate-950 font-bold text-xs">+</div>
+        <span class="text-sm font-bold text-white">San Rafael Salud</span>
+      </div>
+      <p class="text-xs text-slate-400">&copy; 2026 Centro Médico San Rafael Salud. Todos los derechos reservados.</p>
+      <div class="flex space-x-4 text-xs text-slate-400">
+        <a href="#" class="hover:text-cyan-400">Privacidad</a>
+        <a href="#" class="hover:text-cyan-400">Términos</a>
+        <a href="#" class="hover:text-cyan-400">Aviso Legal</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    function refreshSummary() {
+      const name = document.getElementById('form-name').value || '--';
+      const spec = document.getElementById('form-spec').value || 'No seleccionada';
+      const mode = document.getElementById('form-mode').value;
+      const date = document.getElementById('form-date').value || '--/--/----';
+      const time = document.getElementById('form-time').value || '--:--';
+
+      document.getElementById('summary-name').innerText = name;
+      document.getElementById('summary-spec').innerText = spec;
+      document.getElementById('summary-mode').innerText = mode;
+      document.getElementById('summary-date').innerText = date;
+      document.getElementById('summary-time').innerText = time;
+    }
+
+    function handleAppointmentSubmit(e) {
+      e.preventDefault();
+      document.getElementById('modal-success').classList.remove('hidden');
+    }
+
+    function closeConfirmationModal() {
+      document.getElementById('modal-success').classList.add('hidden');
+      document.getElementById('appointment-form').reset();
+      refreshSummary();
+      window.location.href = "../index.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro Médico San Rafael Salud - Inicio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="animated-bg min-h-screen flex flex-col custom-scrollbar">
+
+  <header class="glass-nav sticky top-0 z-50 w-full transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-teal-400 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+            <svg class="w-6 h-6 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"></path>
+            </svg>
+          </div>
+          <div>
+            <span class="text-xl font-extrabold tracking-tight text-white">San Rafael <span class="text-cyan-400 glow-text">Salud</span></span>
+            <span class="block text-[10px] tracking-widest text-teal-300 font-semibold uppercase">Centro Hospitalario</span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex space-x-2 bg-slate-900/60 p-1.5 rounded-2xl border border-slate-800">
+          <a href="index.html" class="px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 text-cyan-400 bg-cyan-950/50 border border-cyan-500/30">Inicio</a>
+          <a href="html/nosotros.html" class="px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-800/50">Nosotros</a>
+          <a href="html/ubicacion.html" class="px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-800/50">Ubicación</a>
+          <a href="html/citamedica.html" class="px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-800/50">Cita Médica</a>
+        </nav>
+
+        <div class="hidden md:flex items-center space-x-4">
+          <div class="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-teal-950/40 border border-teal-500/30">
+            <span class="w-2.5 h-2.5 rounded-full bg-teal-400 pulse-dot"></span>
+            <span class="text-xs font-semibold text-teal-300">Urgencias 24/7</span>
+          </div>
+          <a href="html/citamedica.html" class="shimmer-button px-5 py-2.5 rounded-xl font-semibold text-sm text-white shadow-lg shadow-cyan-500/20 active:scale-95">
+            Agendar Ahora
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden text-slate-300 p-2 rounded-lg hover:bg-slate-800 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden glass-card border-x-0 border-t-0 px-4 pt-2 pb-6 space-y-2">
+      <a href="index.html" class="block w-full text-left px-4 py-3 rounded-xl text-base font-semibold text-cyan-400 bg-cyan-950/30">Inicio</a>
+      <a href="html/nosotros.html" class="block w-full text-left px-4 py-3 rounded-xl text-base font-semibold text-slate-300 hover:bg-slate-800/50">Nosotros</a>
+      <a href="html/ubicacion.html" class="block w-full text-left px-4 py-3 rounded-xl text-base font-semibold text-slate-300 hover:bg-slate-800/50">Ubicación</a>
+      <a href="html/citamedica.html" class="block w-full text-left px-4 py-3 rounded-xl text-base font-semibold text-slate-300 hover:bg-slate-800/50">Cita Médica</a>
+      <div class="pt-4 border-t border-slate-800 flex justify-between items-center">
+        <span class="text-xs text-teal-400 font-semibold flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-teal-400 pulse-dot"></span> Urgencias 24/7 Disponible
+        </span>
+        <a href="html/citamedica.html" class="shimmer-button px-4 py-2 rounded-lg text-sm font-semibold text-white">Agendar Cita</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+
+    <section class="grid lg:grid-cols-12 gap-8 items-center pt-4">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card border-cyan-500/30">
+          <span class="flex h-2 w-2 rounded-full bg-cyan-400 pulse-dot"></span>
+          <span class="text-xs font-bold tracking-wide uppercase text-cyan-300">Atención Médica de Excelencia</span>
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+          Cuidado médico humano potenciado por <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500 bg-clip-text text-transparent">tecnología avanzada</span>
+        </h1>
+
+        <p class="text-lg text-slate-300 max-w-2xl font-light leading-relaxed">
+          Un ecosistema de salud integral diseñado para tu bienestar. Acceso inmediato a los más reconocidos especialistas, diagnósticos de precisión y tratamiento humanizado de vanguardia.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-2">
+          <a href="html/citamedica.html" class="shimmer-button px-8 py-4 rounded-xl font-bold text-base text-white shadow-lg shadow-cyan-500/25 flex items-center justify-center space-x-3 active:scale-95">
+            <span>Agendar Consulta Cita</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+          <a href="html/ubicacion.html" class="glass-card hover:bg-slate-800/80 px-8 py-4 rounded-xl font-semibold text-base text-slate-200 flex items-center justify-center space-x-2 transition-all">
+            <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            <span>Ver Ubicaciones</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80">
+          <div class="p-3 rounded-2xl glass-card text-center">
+            <span class="text-2xl sm:text-3xl font-extrabold text-cyan-400 glow-text block">+150</span>
+            <span class="text-xs text-slate-400 font-medium">Especialistas</span>
+          </div>
+          <div class="p-3 rounded-2xl glass-card text-center">
+            <span class="text-2xl sm:text-3xl font-extrabold text-teal-400 block">24/7</span>
+            <span class="text-xs text-slate-400 font-medium">Urgencias</span>
+          </div>
+          <div class="p-3 rounded-2xl glass-card text-center">
+            <span class="text-2xl sm:text-3xl font-extrabold text-blue-400 block">99%</span>
+            <span class="text-xs text-slate-400 font-medium">Satisfacción</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative">
+        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500 to-teal-500 opacity-20 blur-xl"></div>
+        <div class="glass-card rounded-3xl p-6 relative overflow-hidden space-y-6">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center">
+                <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-base">Atención Médica Digital</h3>
+                <p class="text-xs text-slate-400">Reserva instantánea y seguimiento</p>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-teal-500/20 text-teal-300 border border-teal-500/30">ONLINE</span>
+          </div>
+
+          <div class="space-y-3">
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="w-2.5 h-2.5 rounded-full bg-cyan-400"></div>
+                <span class="text-sm text-slate-200">Consultas Presenciales</span>
+              </div>
+              <span class="text-xs text-cyan-400 font-semibold">Disponibles hoy</span>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="w-2.5 h-2.5 rounded-full bg-teal-400"></div>
+                <span class="text-sm text-slate-200">Telemedicina en Vivo</span>
+              </div>
+              <span class="text-xs text-teal-400 font-semibold">Conexión 15 min</span>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="w-2.5 h-2.5 rounded-full bg-blue-400"></div>
+                <span class="text-sm text-slate-200">Laboratorio Especializado</span>
+              </div>
+              <span class="text-xs text-blue-400 font-semibold">Resultados 24h</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-gradient-to-r from-cyan-950/40 to-teal-950/40 border border-cyan-500/30 flex items-center justify-between">
+            <div>
+              <span class="block text-xs font-semibold text-slate-400">Próximo Turno Libre</span>
+              <span class="text-sm font-bold text-white">Hoy - 14:30 hrs</span>
+            </div>
+            <a href="html/citamedica.html" class="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-all">
+              Tomar Turno
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Especialidades Médicas</h2>
+        <p class="text-sm text-slate-400">Cobertura de alta complejidad respaldada por juntas médicas especializadas.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-6 glow-effect space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-2xl">🫀</div>
+          <h3 class="text-xl font-bold text-white">Cardiología Integral</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Chequeos preventivos, ecocardiogramas avanzados y unidad de cateterismo hemodinámico de última generación.</p>
+          <a href="html/citamedica.html" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center space-x-1">
+            <span>Agendar cita especializada</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 glow-effect space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-2xl">🧠</div>
+          <h3 class="text-xl font-bold text-white">Neurología & Neurocirugía</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Diagnóstico y tratamiento avanzado de patologías del sistema nervioso central y unidad cerebral vascular.</p>
+          <a href="html/citamedica.html" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center space-x-1">
+            <span>Agendar cita especializada</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 glow-effect space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-2xl">👶</div>
+          <h3 class="text-xl font-bold text-white">Pediatría & Neonatología</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Atención cálida y personalizada para lactantes, niños y adolescentes con instalaciones pediátricas exclusivas.</p>
+          <a href="html/citamedica.html" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center space-x-1">
+            <span>Agendar cita especializada</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 glow-effect space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-2xl">🦴</div>
+          <h3 class="text-xl font-bold text-white">Traumatología & Ortopedia</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Cirugía artroscópica, reemplazos articulares y centro especializado en rehabilitación física integral.</p>
+          <a href="html/citamedica.html" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center space-x-1">
+            <span>Agendar cita especializada</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 glow-effect space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-2xl">🔬</div>
+          <h3 class="text-xl font-bold text-white">Oncología Multidisciplinaria</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Tratamientos oncológicos personalizados, inmunoterapia y acompañamiento médico-emocional constante.</p>
+          <a href="html/citamedica.html" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center space-x-1">
+            <span>Agendar cita especializada</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 glow-effect space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-2xl">👁️</div>
+          <h3 class="text-xl font-bold text-white">Oftalmología Láser</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Corrección refractiva de alta precisión, microcirugía de cataratas y tratamiento de enfermedades retinianas.</p>
+          <a href="html/citamedica.html" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center space-x-1">
+            <span>Agendar cita especializada</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="glass-nav border-t border-slate-800 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center space-x-2">
+        <div class="w-6 h-6 rounded-lg bg-cyan-500 flex items-center justify-center text-slate-950 font-bold text-xs">+</div>
+        <span class="text-sm font-bold text-white">San Rafael Salud</span>
+      </div>
+      <p class="text-xs text-slate-400">&copy; 2026 Centro Médico San Rafael Salud. Todos los derechos reservados.</p>
+      <div class="flex space-x-4 text-xs text-slate-400">
+        <a href="#" class="hover:text-cyan-400">Privacidad</a>
+        <a href="#" class="hover:text-cyan-400">Términos</a>
+        <a href="#" class="hover:text-cyan-400">Aviso Legal</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
