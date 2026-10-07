@@ -1,61 +1,384 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio | Braulio Torres</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-    body { background-color: #f4f6f9; color: #333; padding: 20px; text-align: center; }
-    header { background: #0f172a; color: white; padding: 30px 15px; border-radius: 12px; margin-bottom: 20px; }
-    h1 { font-size: 22px; margin-bottom: 8px; }
-    p { font-size: 14px; color: #cbd5e1; }
-    .badge { display: inline-block; background: #2563eb; color: white; padding: 5px 12px; border-radius: 15px; font-size: 12px; margin-top: 10px; }
-    .section { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    h2 { font-size: 18px; color: #0f172a; margin-bottom: 15px; border-bottom: 2px solid #2563eb; display: inline-block; padding-bottom: 4px; }
-    .card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin-bottom: 15px; text-align: left; }
-    .card h3 { font-size: 16px; color: #1e293b; margin-bottom: 5px; }
-    .card p { color: #64748b; font-size: 13px; margin-bottom: 10px; }
-    .btn { display: inline-block; background: #2563eb; color: white; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-size: 13px; font-weight: bold; }
-    .skills span { display: inline-block; background: #e2e8f0; color: #334155; padding: 5px 10px; border-radius: 6px; font-size: 12px; margin: 3px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braulio Salvador Torres Villanueva | Desarrollador de Software</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg: #090d16;
+            --card: rgba(17, 24, 39, 0.7);
+            --border: rgba(255, 255, 255, 0.08);
+            --primary: #2563eb;
+            --accent: #7c3aed;
+            --text: #f3f4f6;
+            --muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .glow-1 {
+            position: fixed;
+            top: -200px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .glow-2 {
+            position: fixed;
+            bottom: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1000px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .brand {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        .links a:hover {
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 120px 20px 60px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 0 60px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 14px;
+            background: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            color: #60a5fa;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            backdrop-filter: blur(8px);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            border-color: rgba(96, 165, 250, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .card .subtitle {
+            font-size: 0.85rem;
+            color: #60a5fa;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .chip {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 640px) {
+            .links { display: none; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Braulio Salvador Torres Villanueva</h1>
-    <p>Desarrollador Web & Multiplataforma | TSU</p>
-    <span class="badge">Disponible para trabajar</span>
-  </header>
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
 
-  <div class="section">
-    <h2>Mis Proyectos Web</h2>
-    
-    <div class="card">
-      <h3>Proyecto Web 1 (Nombre de tu página)</h3>
-      <p>Página web desarrollada con maquetación moderna en HTML, CSS y JS.</p>
-      <a href="AQUÍ_TUS_LINKS_DE_PÁGINAS" target="_blank" class="btn">Ver Sitio Web</a>
+    <nav>
+        <div class="brand">Braulio Torres</div>
+        <ul class="links">
+            <li><a href="#perfil">Perfil</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <span class="tag">Desarrollador Web & Multiplataforma</span>
+            <h1><span class="gradient-text">Braulio Salvador</span> Torres Villanueva</h1>
+            <p>Ingeniero en Desarrollo y Gestión de Software con experiencia en aplicaciones web orientadas a servicios, bases de datos y arquitectura de sistemas.</p>
+            <div class="actions">
+                <a href="#contacto" class="btn btn-primary"><i data-lucide="mail"></i> Contactar</a>
+                <a href="mailto:stvbraulio@gmail.com" class="btn btn-secondary"><i data-lucide="send"></i> Enviar correo</a>
+            </div>
+        </section>
+
+        <section id="perfil">
+            <h2><i data-lucide="graduation-cap"></i> Educación</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Ingeniería en Desarrollo y Gestión de Software</h3>
+                    <div class="subtitle">Universidad Tecnológica de Puebla (Sept 2025 - Actualidad)</div>
+                    <p>Cursando el 8vo cuatrimestre. Enfoque en arquitectura de software, gestión de proyectos y desarrollo avanzado.</p>
+                </div>
+                <div class="card">
+                    <h3>TSU en Desarrollo de Software Multiplataforma</h3>
+                    <div class="subtitle">Universidad Tecnológica de Puebla (Sept 2023 - Agos 2025)</div>
+                    <p>Titulado. Formación en programación orientada a objetos, bases de datos relacionales/no relacionales y desarrollo web.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia">
+            <h2><i data-lucide="briefcase"></i> Experiencia & Proyectos</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Desarrollador de Software Multiplataforma</h3>
+                    <div class="subtitle">Estadías TSU (Mayo 2025 - Agosto 2025)</div>
+                    <p>Desarrollo de lógica de programación y scripts utilizando Python y POO. Implementación y administración de MySQL y Firebase en entornos Linux y MacOS.</p>
+                </div>
+                <div class="card">
+                    <h3>Desarrollador de Software</h3>
+                    <div class="subtitle">Proyecto Integrador (Sept 2024 - Dic 2024)</div>
+                    <p>Diseño y desarrollo de aplicaciones web orientadas a servicios (SOA) y aplicaciones móviles estructuradas.</p>
+                </div>
+                <div class="card">
+                    <h3>Ecosistemas Inteligentes & IoT</h3>
+                    <div class="subtitle">Área de especialización</div>
+                    <p>Arquitectura e integración de soluciones conectadas, automatización de procesos y convergencia de hardware y software.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades">
+            <h2><i data-lucide="code"></i> Competencias Técnicas</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Desarrollo</h3>
+                    <div class="chips">
+                        <span class="chip">Python</span>
+                        <span class="chip">C++</span>
+                        <span class="chip">POO</span>
+                        <span class="chip">Servicios Web</span>
+                        <span class="chip">Apps Móviles</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Bases de Datos & Entornos</h3>
+                    <div class="chips">
+                        <span class="chip">MySQL</span>
+                        <span class="chip">Firebase</span>
+                        <span class="chip">Linux</span>
+                        <span class="chip">MacOS</span>
+                        <span class="chip">Soporte Técnico</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Ciberseguridad & Redes</h3>
+                    <div class="chips">
+                        <span class="chip">SSDLC</span>
+                        <span class="chip">Hardening</span>
+                        <span class="chip">Redes</span>
+                        <span class="chip">Inglés (B1)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2><i data-lucide="phone"></i> Contacto</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Teléfonos</h3>
+                    <p>+52 221 371 2314</p>
+                    <p>+52 220 263 5159</p>
+                </div>
+                <div class="card">
+                    <h3>Correo Electrónico</h3>
+                    <p>stvbraulio@gmail.com</p>
+                </div>
+                <div class="card">
+                    <h3>Ubicación</h3>
+                    <p>Col. Joaquín Colombres, Puebla, Pue.</p>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="card">
-      <h3>Proyecto Web 2 (Nombre de tu página)</h3>
-      <p>Landing page responsiva adaptada a dispositivos móviles y escritorio.</p>
-      <a href="AQUÍ_TUS_LINKS_DE_PÁGINAS" target="_blank" class="btn">Ver Sitio Web</a>
-    </div>
-  </div>
+    <footer>
+        <p>&copy; 2026 Braulio Salvador Torres Villanueva</p>
+    </footer>
 
-  <div class="section">
-    <h2>Habilidades Técnicas</h2>
-    <div class="skills">
-      <span>HTML5</span>
-      <span>CSS3</span>
-      <span>JavaScript</span>
-      <span>Python</span>
-      <span>MySQL</span>
-      <span>Firebase</span>
-      <span>Linux</span>
-    </div>
-  </div>
-
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
