@@ -1,0 +1,239 @@
+/* ==========================================
+   VARIABLES Y ESTILOS BASE
+   ========================================== */
+:root {
+    --primary-color: #d35400;
+    --accent-color: #e67e22;
+    --dark-bg: #1e1e1e;
+    --light-bg: #f9f8f6;
+    --text-color: #2c3e50;
+    --border-color: #e0e0e0;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+/* NAVEGACIÓN */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    background-color: var(--dark-bg);
+    padding: 1.2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #dcdcdc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-color);
+}
+
+/* ENCABEZADO */
+.nosotros-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.nosotros-header h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.nosotros-header p {
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+/* SECCIÓN HISTORIA */
+.story-section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.story-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.story-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.story-content h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--dark-bg);
+    margin-bottom: 1.5rem;
+}
+
+.story-content p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+/* SECCIÓN VALORES */
+.values-section {
+    background-color: var(--light-bg);
+    padding: 4rem 2rem;
+}
+
+.values-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.value-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark-bg);
+}
+
+.value-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* SECCIÓN CHEF */
+.chef-section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.chef-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.chef-content .subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.chef-content h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.chef-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #777;
+    margin-bottom: 1.5rem;
+}
+
+.chef-content p:last-child {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #444;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+}
+
+.chef-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--dark-bg);
+    color: #bbb;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.footer-bottom {
+    font-size: 0.85rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 850px) {
+    .story-container,
+    .chef-container {
+        grid-template-columns: 1fr;
+    }
+
+    .chef-container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+}

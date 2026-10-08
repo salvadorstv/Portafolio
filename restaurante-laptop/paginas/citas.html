@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Cita - Restaurante</title>
+    <link rel="stylesheet" href="../css/citas.css">
+    <!-- Fuentes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Encabezado y Navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="inicio.html">Restaurante</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="inicio.html">INICIO</a></li>
+                <li><a href="citas.html" class="active">CITAS</a></li>
+                <li><a href="menu.html">MENÚ</a></li>
+                <li><a href="nosotros.html">NOSOTROS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Encabezado de la página -->
+        <section class="citas-header">
+            <h1>Reserva tu Mesa</h1>
+            <p>Asegura tu lugar para una experiencia gastronómica inolvidable.</p>
+        </section>
+
+        <!-- Sección del Formulario e Información -->
+        <section class="booking-section">
+            <div class="booking-container">
+                
+                <!-- Columna Izquierda: Formulario -->
+                <div class="form-wrapper">
+                    <h2>Detalles de la Reservación</h2>
+                    <form action="#" method="POST" class="booking-form">
+                        
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="correo">Correo Electrónico *</label>
+                                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono *</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="(123) 456-7890" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fecha">Fecha *</label>
+                                <input type="date" id="fecha" name="fecha" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="hora">Hora *</label>
+                                <select id="hora" name="hora" required>
+                                    <option value="" disabled selected>Selecciona una hora</option>
+                                    <option value="13:00">01:00 PM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="19:00">07:00 PM</option>
+                                    <option value="20:00">08:00 PM</option>
+                                    <option value="21:00">09:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="personas">Número de Personas *</label>
+                            <select id="personas" name="personas" required>
+                                <option value="1">1 Persona</option>
+                                <option value="2" selected>2 Personas</option>
+                                <option value="3">3 Personas</option>
+                                <option value="4">4 Personas</option>
+                                <option value="5">5 Personas</option>
+                                <option value="6+">Mesa Grande (6+ personas)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notas">Notas Especiales o Alergias</label>
+                            <textarea id="notas" name="notas" rows="4" placeholder="¿Celebran alguna ocasión especial o tienen alguna restricción alimentaria?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Confirmar Reservación</button>
+                    </form>
+                </div>
+
+                <!-- Columna Derecha: Información Relevante -->
+                <div class="info-wrapper">
+                    <h3>Información Importante</h3>
+                    
+                    <div class="info-card">
+                        <h4> Horarios de Atención</h4>
+                        <p><strong>Lunes a Viernes:</strong> 12:00 PM – 11:00 PM</p>
+                        <p><strong>Sábados y Domingos:</strong> 01:00 PM – 12:00 AM</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h4> Politicas de Reserva</h4>
+                        <p>• La tolerancia máxima de espera es de 15 minutos.</p>
+                        <p>• Para grupos mayores a 8 personas, contáctanos directamente por teléfono.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h4> Contacto Directo</h4>
+                        <p>Tel: (123) 456-7890</p>
+                        <p>Email: reservas@restaurante.com</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Restaurante. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
